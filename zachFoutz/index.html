@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+
+      Title: index.html
+      Author: Zachary Foutz
+      Date: 11/18/15
+      Last-Edit: 11/18/15 >> 14.10 PST
+
+      Purpose: This site is designed to be a template for a movie theater proof of concept landing page.
+      Supporting files:
+                          cinemaStyles.css
+                          images/ender-poster.jpg
+                          videos/ender.mp4
+
+      -->
+
+    <meta charset="utf-8">
+    <title>Cinema Cinemas</title>
+    <link rel="stylesheet" href="css/cinemaStyles.css">
+
+
+  </head>
+  <body>
+
+    <div class="root-container">
+
+    </div>
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/handlebars.js"></script>
+
+    <script id="body-template" type="text/x-handlebars-template">
+      <!-- Navigation (Present on all pages) -->
+      <header id="header">
+        <h1>Scinema</h1>
+        <nav>
+          <ul>
+            <!-- add the active class to make the current page be highlighted in nav (currently red color) -->
+            <li class=""><a href="javascript:link1();" class="home">HOME</a></li>
+            <li class=""><a href="javascript:link2();" class="ender">ENDERS GAME</a></li>
+            <li class=""><a href="javascript:link3();" class="martian">THE MARTIAN</a></li>
+            <li class=""><a href="javascript:link4();" class="interstellar">INTERSTELLAR</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Body of the page -->
+      <main id="main">
+        <section>
+
+          <article class="trailer-container">
+            <video height="405" width="720" controls poster="{{poster}}">
+              <source src="{{video}}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </article>
+          <article class="description-container">
+              <div class="movie-header">
+                  <p class="movie-title">
+                    {{title}} | {{rating}}/10
+                  </p>
+                  <!-- Rating stars (for show only) -->
+                  <div class="rating">
+                    <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+
+                    <a href="#reviews"><button class="jump-to-reviews">REVIEWS</button></a>
+                  </div>
+
+              </div>
+              <hr/>
+
+              <div class="description">
+
+                <!-- CAST AND CREW -->
+                <h3>Cast and Crew</h3>
+                <p>
+                  <!-- Todo: add cast and crew information -->
+                </p>
+                <!-- SYNOPSIS -->
+                <h3>Synopsis</h3>
+                <p>
+                  <tab/>{{synopsisParagraph}}
+                  <br/>
+                  <br/>
+                  - {{synopsisFooter}}
+                </p>
+                <hr/>
+
+                <!-- TODO: add reviews and forms for new reviews -->
+              </div>
+
+              <div class="reviews" id="reviews">
+                <h3>Write a review</h3>
+                <textarea name="styled-textarea" id="styled">Enter your comment here...</textarea>
+                <button type="submit">SUBMIT</button>
+
+                <div class="review-container">
+
+                  <small>Jack Smith</small>
+                  <hr/>
+                  <h3>This movie is amazing!</h3>
+                  <p>
+                    <tab/>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan
+                  </p>
+
+                </div>
+              </div>
+
+          </article>
+
+        </section>
+      </main>
+    </script>
+    <script id="home-template" type="text/x-handlebars-template">
+      <main>
+        <!-- Navigation (Present on all pages) -->
+        <header id="header">
+          <h1>Scinema</h1>
+          <nav>
+            <ul>
+              <!-- add the active class to make the current page be highlighted in nav (currently red color) -->
+              <li class=""><a href="javascript:link1();" class="home">HOME</a></li>
+              <li class=""><a href="javascript:link2();" class="ender">ENDERS GAME</a></li>
+              <li class=""><a href="javascript:link3();" class="martian">THE MARTIAN</a></li>
+              <li class=""><a href="javascript:link4();" class="interstellar">INTERSTELLAR</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Body of the page -->
+        <main id="main">
+          <section>
+          <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0; margin: auto; margin-top: 100px; }
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+            .tg .tg-yw4l{vertical-align:top}
+          </style>
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-yw4l">MONDAY</th>
+                <th class="tg-yw4l">12:00 PM</th>
+                <th class="tg-yw4l">2:00 PM</th>
+                <th class="tg-yw4l">4:00 PM</th>
+                <th class="tg-yw4l">6:00 PM</th>
+                <th class="tg-yw4l">8:00 PM</th>
+                <th class="tg-yw4l">10:00 PM</th>
+                <th class="tg-yw4l">12:00 AM</th>
+              </tr>
+            <thead>
+          </table>
+          </section>
+        </main>
+      </main>
+    </script>
+    <script id="select-box" type="text/x-handlebars-template">
+      <tr>
+        <td>{{movieTITLE}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+        <td>{{buy}}</td>
+      </tr>
+    </script>
+    <script src="js/templates.js"></script>
+  </body>
+
+</html>
